@@ -4,9 +4,15 @@
 
 {% block content %}
     <h1>Log In</h1>
-    <form method="POST">
+    <form method="article">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" class="btn btn-success" value="Log In">
     </form>
+    <p>
+        <small>Don't have an account? Click <a href="{% url 'signup' %}">here</a> to sign up.</small>
+    </p>
+    <p>
+        <small>Don't remember your password? Click <a href="{% url 'password_reset' %}">here</a> to reset it.</small>
+    </p>
 {% endblock content %}
